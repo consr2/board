@@ -1,0 +1,17 @@
+<html>
+<div>비밀번호 변경창</div>
+<form th:action="@{/user/newpassword/fin}" method="post"  th:object="${pwForm}">
+	<div>
+		<input placeholder="pw" th:field="*{password1}">
+	</div>
+	<div>
+		<input placeholder="pw2" th:field="*{password2}">
+	</div>
+	<div th:if="${#fields.hasAnyErrors()}">
+		<div class="error" th:each="err : ${#fields.allErrors()}" th:text="${err}"></div>
+	</div>
+	<input type="submit" value="변경">
+</form>
+
+
+</html>

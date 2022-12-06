@@ -1,0 +1,83 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content">
+<div class="mainflex">
+	<div>
+		<nav th:replace="sidevar"></nav>
+	</div>
+	<div class="maintablebox">
+		<div class="eachtablebox">
+			<!-- 최근 게시물 -->
+			<div class ="tabletitle">최근게시물</div>
+			<table>
+				<thead>
+					<tr>
+						<th>No.</th>
+						<th class="subjectbox">제목</th>
+						<th>작성자</th>
+						<th>날짜</th>
+						<th>답변</th>
+						<th>조회수</th>
+						<th>추천수</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="qcurrent : ${qDateList}">
+						<td th:text="${qcurrent.id}"></td>
+						<td class="subjectbox">
+							<a class="subject" th:data-id="${qcurrent.id}" th:href="@{|/question/detail/${qcurrent.id}|}" th:text="${qcurrent.subject}"></a>
+						</td>
+						<td th:text="${qcurrent.author.username}"></td>
+						<td th:text="${#temporals.format(qcurrent.createDate, 'MM-dd')}"></td>
+						<td th:text="${#lists.size(qcurrent.answerList)}" ></td>
+						<td th:text="${qcurrent.view}" ></td>
+						<td th:text="${qcurrent.voter.size()}"></td>
+					</tr>
+				</tbody>	
+			</table>
+			<!-- //최근 게시물 -->
+			
+			<!-- 추가 된 카테고리 별 테이블 -->
+			<div class ="eachtablebox" th:each="categorie : ${categorieList}">
+				<div class = "tabletitle">
+					<a th:href="@{|/question/list/${categorie.id}|}" th:text="${categorie.name}"></a>
+				</div>
+				<table class="smtable">
+					<thead>
+						<tr>
+							<th>No.</th>
+							<th class="subjectbox">제목</th>
+							<th>작성자</th>
+							<th>날짜</th>
+							<th>답변</th>
+							<th>조회수</th>
+							<th>추천수</th>
+						</tr>
+					</thead>
+					<tbody>
+						<div th:each="qL : ${qList}">
+							<tr th:each="q,i : ${qL}">
+								<div th:if="${categorie == q.categorie and i.count < 5}">
+									<td th:text="${q.id}"></td>
+									<td class="subjectbox">
+										<a class="subject" th:data-id="${q.id}" th:href="@{|/question/detail/${q.id}|}" th:text="${q.subject}"></a>
+									</td>
+									<td>
+										<span th:text="${q.author.username}"></span>
+									</td>
+									<td th:text="${#temporals.format(q.createDate, 'MM-dd')}"></td>
+									<td th:text="${#lists.size(q.answerList)}" ></td>
+									<td th:text="${q.view}" ></td>
+									<td th:text="${q.voter.size()}"></td>
+								</div>
+							</tr>
+						</div>
+					</tbody>
+				</table>
+			</div>
+			<!-- //추가 된 카테고리 별 테이블 -->
+			
+		</div>
+	</div>
+</div>
+
+</html>

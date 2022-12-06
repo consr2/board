@@ -1,0 +1,469 @@
+*{margin: 0px; padding: 0px;}
+li{list-style: none;}
+a{color: #222; text-decoration: none;}
+a:hover{
+	cursor:pointer;
+    color: rgb(100, 100, 100);
+}
+input:focus{outline:none;}
+.clearfix::after{content: ""; display: block; clear: both;}
+
+
+/* ------------공통 ---------------*/
+.btns{
+	border: none;
+	padding: 3px 5px;
+	color: white;
+	background-color: rgb(201, 201, 201);
+	transition: 0.3s;
+}
+.btns:hover{
+	color: white;
+	background-color: rgb(180, 180, 180);
+}
+
+.error{
+	padding: 10px;
+	border-radius: 10px;
+	background-color: rgb(255, 169, 57);
+	color: rgb(134, 15, 15);
+	margin: 20px 0px;
+}
+
+.homeicon{
+	font-size: large;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 40px;
+}
+
+.mainflex{
+	display: flex;
+}
+
+table{
+	table-layout: fixed;
+	width: 630px;
+   	border-collapse: collapse;
+   	margin: 0px auto;
+   	text-align: center;
+}
+th{
+	background-color: #c0c0c0;
+	color: white;
+	padding: 0px 5px;
+}
+td{
+   border-bottom: 1px solid #c0c0c0;
+   padding: 2px 0px;
+}
+
+.subjectbox{
+	text-align: left;
+	width: 272px;
+	white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    vertical-align: middle;
+}
+.wrap-main .table .subject{
+	box-sizing: border-box;
+    word-wrap: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+textarea{
+    resize: none;
+}
+
+/*-----------------메인화면------------------*/
+
+.maintablebox{
+	position: relative;
+	width: 650px;
+	margin: 0 auto;
+}
+
+.eachtablebox{
+	margin-top: 50px;
+}
+.eachtablebox:last-child{
+	margin-bottom: 100px;
+}
+.tabletitle{
+	transform: translateX(10px);
+	font-size: large;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+/*-----------------사이드바------------------*/
+
+.sidebar{
+	position:fixed;
+	width:200px; height: 100vh;
+	background-color: #dadada;
+	transform: translateX(-180px);
+	transition: 0.7s;
+	z-index: 10;
+	overflow:scroll;
+
+}
+.sidebar::-webkit-scrollbar{
+	width: 100%;
+}
+
+
+.sidebar.side_active{
+	transform: translateX(0px);
+	transition: 0.7s;
+}
+
+.sidebar .wrap{
+	padding: 30px;
+}
+
+.sidebar .home{
+	font-size: large;
+	font-weight: bold;
+	padding-bottom: 30px;
+}
+
+.sidebar .wrap .bottomline{
+	border-bottom: 1px solid black;
+}
+
+.sidebar .userpoto .userid{
+	font-size: large;
+	font-weight: bold;
+}
+.sidebar .wrap .userinfo{
+	margin-bottom: 30px;
+}
+
+.sidebar .wrap .userinfo .alertcnt {
+	right: 40px; top: 129px;
+	position: absolute;
+	font-size: 13px;
+	color: rgb(255, 101, 101);
+}
+
+
+.sidebar .wrap .userinfo .alertbox{
+	width: 138px;
+	border: 1px solid black;
+	font-size: 8px;
+	display: none;
+	transition: 0.5s;
+}
+
+.sidebar .wrap .userinfo .alertbox.alert_active{
+	display: block;
+}
+
+.sidebar .wrap .userinfo .alertbox .alreteachbox{
+	border: 1px solid black;
+	margin: 5px;
+	padding: 5px;
+}
+.sidebar .wrap .userinfo .alertbox .alreteachbox .textarea{
+	overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.sidebar .wrap .userinfo .hoverept{
+	padding-left: 20px;
+	transition: 0.8s;
+}
+.sidebar .wrap .userinfo .hoverept a{
+	display: block;
+}
+.sidebar .wrap .userinfo .hoverept:hover{
+	box-shadow: inset 210px 0 rgb(144 144 144 / 70%);
+}
+
+.sidebar .categorie{
+	margin-bottom: 30px;
+}
+
+
+.sidebar .categorie .categorietitle{
+	font-size: middle;
+	font-weight: bold;
+}
+.sidebar .categorie .categorieinfo{
+	padding-left: 20px;
+	transition: 0.8s;
+}
+.sidebar .categorie .categorieinfo:hover{
+	box-shadow: inset 210px 0 rgb(144 144 144 / 70%);
+}
+
+.sidebtn{
+	position:fixed;
+	bottom: 30px; left: 30px;
+	z-index: 11;
+	cursor: pointer;
+	width: 50px; height: 50px;
+	box-shadow: 0 1px 15px rgba(0,0,0,0.4);
+	transition: 0.7s;
+}
+
+.sidebtn .line{
+	border-bottom: 4px solid #fff;
+}
+.sidebtn .line:nth-of-type(1){
+	transform: translateY(-6px);
+}
+.sidebtn .line:nth-of-type(3){
+	transform: translateY(6px);
+}
+
+/*-----------------카테고리 설정창------------------*/
+.centerbox{
+	margin:30px auto;
+}
+
+.categoriebox{
+	width: 50%;
+	padding: 10px;
+	border: 1px solid black;
+}
+
+.categoriebox .active{
+	background-color: rgb(132, 196, 255);
+}
+
+/*-----------------유저관리------------------*/
+.usercustomtitle{
+	text-align: center;
+	margin: 40px;
+}
+
+.table2{
+	width: 800px;
+	border: 1px solid black;
+}
+.table2 th{border: 1px solid black; text-align: center;}
+.table2 td{border: 1px solid black;}
+
+
+
+
+/* ----------- 게시판 세부 목록 --------------*/
+.content{
+	display: flex;
+}
+.wrap-main{
+	position: relative;
+	width: 650px;
+	margin: 50px auto;
+}
+
+.wrap-main .createquestion{
+	float: right;
+	margin: 15px 0px;
+	transform: translate(-10px, 3px);
+}
+
+.wrap-main .search{
+	float: right;
+	padding-bottom: 10px;
+	transform: translate(-10px, 7px);
+}
+
+
+.wrap-main .page{
+	display:flex;
+	justify-content: center;
+}
+.wrap-main .page div{
+	float: left;
+	padding: 0 5px;
+}
+.wrap-main .page .active{
+	padding: 0 3px;
+	background: rgb(89, 166, 238);
+	color: white;
+}
+
+/*--------- 질문 상세페이지 --------------*/
+
+.qdetail{
+	width: 800px;
+	margin: 0 auto;
+	border: 1px solid black;
+	border-radius: 12px;
+	padding: 50px;
+}
+.title{
+	margin-bottom: 10px;
+}
+
+.otherinfo{
+	display: flex;
+}
+.otherinfo .vote_count{
+	margin-right: 5px;
+}
+.otherinfo .q_view{
+	display: flex;
+	margin-right: 30px;
+}
+.otherinfo .vote_btn{
+	margin-right: 10px;
+}
+.otherinfo .timeinfo{
+	margin-right: 40px;
+}
+
+.qdetail .answerbox{
+	display: flex;
+	margin: 10px;
+	
+}
+.qdetail .answerbox .answercreatearea{
+	border: none;
+	outline: none;
+	width: 700px;
+}
+.qdetail .answerbox .answercreatebox{
+	padding: 10px;
+	border: 1px solid black;
+	width: 730px;
+}
+.qdetail .answerbox .answerbtn{
+	height: 100px;
+	width: 50px;
+}
+
+
+.qdetail .q_content{
+	border: 1px solid black;
+	padding: 100px 25px;
+}
+
+.qdetail .q_answerbox{
+	position: relative;
+	border: 1px solid black;
+	margin: 10px;
+	padding: 10px 0 30px 10px;
+	box-sizing: border-box;
+}
+.qdetail .q_answerbox .answerid{
+	font-weight: bold;
+}
+.qdetail .q_answerbox .answer_infobox{
+	display: flex;
+}
+.qdetail .q_answerbox .answer_infobox .answerdate{
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	background-color: rgb(95, 95, 95);
+	padding: 2px 7px;
+	border-radius: 10px;
+	color: white;
+}
+.qdetail .q_answerbox .answer_infobox .answerdeletebtn{
+	position: absolute;
+	right: 10px;
+}
+
+.qdetail .questionbtnbox{
+	float: right;
+	display:flex;
+	
+}
+.qdetail .questionbtnbox .q_remake_btn{
+	margin-right: 10px;
+
+}
+.qdetail .questionbtnbox .q_delete_btn{}
+
+
+/* -----------  로그인,회원가입 --------------*/
+.signuptitle{
+	margin: 20px auto;	
+	text-align: center;
+}
+
+.loginbox{
+	width: 215px;
+	margin: 100px auto;
+}
+
+.box{
+	position: relative;
+	margin-bottom: 30px;
+}
+.label{
+	padding-bottom: 13px;
+}
+.inputsize{
+	border: 1px solid #dadada;
+	box-sizing: border-box;
+	padding: 10px 14px 10px;
+}
+
+.inputsize .input{
+	width:200px;
+	height: 29px; border:none;
+	font-size: 15px;
+}
+
+.btn-size1{
+	text-align: center;
+	width: 230px; height: 45px;
+}
+
+.signup-error{
+	display: none;
+	color: red;
+	margin-top: 10px;
+}
+
+
+/*-----------------질문 작성------------------*/
+
+.centerbox{
+	width: 600px;
+	margin: 0 auto;
+}
+
+.centerbox .qcreate_categorie{
+	font-size: 18px;
+	margin: 10px 0;
+}
+.centerbox .qcreate_title{
+	font-size: 18px;
+	margin: 10px 0;
+}
+.centerbox .qcreate_title .title_textarea{
+	width: 600px;
+}
+.centerbox .qcreate_content{
+	font-size: 18px;
+	margin: 10px 0;
+}
+
+.centerbox .qcreate_btn{
+	margin: 30px 0; 
+}
+
+/*-----------------유저개인 페이지------------------*/
+.userbox{
+	margin: 40px;
+}
+
+.userbox .leftbox{
+	border: 1px solid black;
+}
+.userbox .rightbox{
+	border: 1px solid black;
+}
+
+

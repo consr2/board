@@ -1,0 +1,81 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content">
+	<div class="content">
+		<div>
+			<nav th:replace="sidevar"></nav>
+		</div>
+		<div class="wrap-main">
+			<div class="clearfix">
+				<h3 th:text="${categorie.name}"></h3>
+				<div class="createquestion">
+					<a class="btns" th:href="@{|/question/create/${categorie.id}|}">게시글 작성</a>
+				</div>
+			</div>
+			<!-- 테이블 -->
+			<table class="table">
+				<thead>
+					<tr>
+						<th>번호</th>
+						<th class="subjectbox">제목</th>
+						<th>작성자</th>
+						<th>날짜</th>
+						<th>답변</th>
+						<th>조회수</th>
+						<th>추천수</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr c th:each="question, index : ${paging}" th:if="${categorie == question.categorie}">
+						<td th:text="${index.count + (paging.number * 10)}"></td>
+						<td class="subjectbox">
+							<a class="subject" th:data-id="${question.id}" th:href="@{|/question/detail/${question.id}|}" th:text="${question.subject}"></a>
+						</td>
+						<td>
+							<span th:if="${question.author != null}" th:text="${question.author.username}"></span>
+						</td>
+						<td th:text="${#temporals.format(question.createDate, 'MM-dd')}"></td>
+						<td th:text="${#lists.size(question.answerList)}" ></td>
+						<td th:text="${question.view}" ></td>
+						<td th:text="${question.voter.size()}"></td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- //테이블 -->
+			
+			<!-- 검색창 -->
+			<div class="clearfix">
+				<div class="search">
+					<form th:action="@{|/question/search/${categorie.id}|}" method="get">
+						<input type="text" placeholder="검색어를 입력해주세요" name="keyword" th:value="${keyword}" />
+						<button class="btns" type="submit">검색</button>
+					</form>
+				</div>
+			</div>
+			<!-- //검색창 -->
+			
+			<!-- 페이징 -->
+			<div class="page">
+				<div th:if="${!paging.isEmpty()}">
+					<div th:if="${paging.number > 0}">
+						<a th:href="@{|?keyword=${keyword}&page=${paging.number-1}|}">
+							<span>뒤로</span>
+						</a>
+					</div>
+					<div th:each="page : ${#numbers.sequence(0,paging.totalPages-1)}"
+					th:if="${paging.number-3 < page and paging.number+3 > page}">
+						<a th:classappend="${page == paging.number} ? 'active'" th:text="${page+1}" th:href="@{|?keyword=${keyword}&page=${page}|}"></a>			
+					</div>
+					<div th:if="${paging.number < paging.totalPages-1}">
+						<a th:href="@{|?keyword=${keyword}&page=${paging.number+1}|}">
+							<span>앞으로</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- //페이징 -->
+			
+		</div>
+	</div>
+
+</div>
+</html>

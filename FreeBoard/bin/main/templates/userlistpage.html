@@ -1,0 +1,46 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content">
+<div>
+	<div class="homeicon">
+		<a href="/">HOME</a>
+	</div>
+	<h2 class="usercustomtitle">유저 목록</h2>
+	<div>
+		<table class="table2">
+			<thead>
+				<tr>
+					<th>아이디</th>
+					<th class="subjectbox">이메일</th>
+					<th>현재권한</th>
+					<th>권한상승</th>
+					<th>권한하락</th>
+					<th>삭제</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="user : ${userList}">
+					<td th:text="${user.username}"></td>
+					<td th:text="${user.email}"></td>
+					<td th:text="${user.role}"></td>
+					<td>
+						<form th:action="@{|/user/list/up/${user.id}|}">
+							<button class="btns"  type="submit">등업</button>
+						</form>
+					</td>
+					<td>
+						<form th:action="@{|/user/list/down/${user.id}|}">
+							<button class="btns"  type="submit">강등</button>
+						</form>
+					</td>
+					<td>
+						<form th:action="@{|/user/list/delete/${user.id}|}">
+							<button class="btns"  type="submit">삭제</button>
+						</form>
+					</td>
+				</tr>				
+			</tbody>
+		</table>
+	</div>
+</div>
+</div>
+</html>

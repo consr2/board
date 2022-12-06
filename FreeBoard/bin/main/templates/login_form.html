@@ -1,0 +1,37 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content">
+	<div class="homeicon">
+		<a href="/">HOME</a>
+	</div>
+	<div class="container">
+		<div class="loginbox">
+			<form th:action="@{/user/login}" method="post">				
+				<!-- 아이디 -->
+				<div class="box">
+					<h3 class="label">
+						<label for="username">사용자id</label>
+					</h3>
+					<span class="inputsize">
+						<input class="input" autocomplete="off" type="text" id="username" name="username" maxlength="20" placeholder="아이디를 입력해주세요">
+					</span>
+				</div>
+				<!-- //아이디  -->
+				<!-- 비번 -->
+				<div class="box">
+					<h3 class="label">
+						<label for="password">비번</label>
+					</h3>
+					<span class="inputsize">
+						<input class="input" autocomplete="off" type="password" id="password" name="password" maxlength="20" placeholder="비밀번호를 입력해주세요">
+					</span>
+				</div>
+				<!-- //비번 -->
+				<div th:if="${param.error}">
+					<div class="error">사용자 정보 오류</div>
+				</div>
+				<button class="btn btn-size1" type="submit">로그인</button>
+			</form>
+		</div>
+	</div>
+</div>
+</html>

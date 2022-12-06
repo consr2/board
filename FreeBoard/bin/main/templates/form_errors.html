@@ -1,0 +1,7 @@
+<!-- form에서 보내는 애러 출력(bindingResult)  -->
+<link rel="stylesheet" href="/style.css">
+<div th:fragment="formErrorsFragment">
+	<div th:if="${#fields.hasAnyErrors()}">
+		<div class="error" th:each="err : ${#fields.allErrors()}" th:text="|확인해주세요 ! : ${err}|"></div>
+	</div>
+</div>
