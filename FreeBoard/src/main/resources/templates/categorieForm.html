@@ -1,0 +1,24 @@
+<html>
+<link rel="stylesheet" href="/style.css">
+<div class="centerbox">
+	<div class="homeicon">
+		<a href="/">HOME</a>
+	</div>
+	<!-- 카테고리 생성창  -->
+	<h2>현재 카테고리 내역</h2>
+	<div class="categoriebox">
+		<div class="catewrap" th:each="cateList : ${categorieList}">
+			<form th:action="@{|/categorie/delete/${cateList.id}|}">
+				<div th:text="|-${cateList.name}|"></div>
+				<input type="submit" value="삭제">
+			</form>
+		</div>
+	</div>
+	<!-- //카테고리 생성창  -->
+	<form th:action="@{/categorie/create}" method="post">
+		<input type="text" name="name">
+		<button type="submit">추가</button>
+	</form>
+
+</div>
+</html>

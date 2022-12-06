@@ -1,0 +1,31 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content">
+	<div class="mainflex">
+		<div>
+			<nav th:replace="sidevar"></nav>
+		</div>
+		<div class="maintablebox">
+			<div class="userbox">
+				<strong>유저페이지</strong>
+				<div class="mainflex">
+					<div class="leftbox">
+						<div>아이디
+							<div th:text="${user.username}"></div>
+						</div>
+						<div>이메일
+							<div th:text="${user.email}"></div>
+						</div>
+						<div>활동내역
+							<div th:text="${user.email}"></div>
+						</div>
+					</div>
+					<div class="rightbox">
+						<div>비밀번호 변경</div>
+						<a class="btns" th:href="@{/user/newpassword}">클릭</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</html>

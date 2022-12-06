@@ -1,0 +1,16 @@
+
+<script>
+let check = false
+let changeUrl = '/'
+
+document.addEventListener("DOMContentLoaded", function(){
+	check = confirm('요청한 페이지의 권한이 없습니다')
+	
+	if(check == true){
+		location.href=changeUrl		
+	}
+})
+
+
+
+</script>

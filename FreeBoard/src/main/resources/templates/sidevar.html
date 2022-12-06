@@ -1,0 +1,131 @@
+<link rel="stylesheet" href="/style.css">
+<div class="sidebar">
+	<div class="wrap">
+		<div class="home">
+			<a th:href="@{/}">HOME</a>
+		</div>
+		<!-- 유저정보 -->
+		<div class="userpoto">
+			<div class="userid bottomline" sec:authorize="isAnonymous()">비회원</div>
+			<div class="bottomline" sec:authorize="isAuthenticated()" th:text="|${#authentication.getPrincipal().getUsername()}님!|"></div>
+		</div>
+		<div class="userinfo">
+			<ul>
+				<li class="bottomline" sec:authorize="isAuthenticated()">
+					<div class="hoverept">
+						<a th:href="@{|/user/page/${#authentication.getPrincipal().getUsername()}|}">회원정보</a>
+					</div>
+				</li>
+				<li class="bottomline" sec:authorize="isAuthenticated()">
+					<div class="hoverept">
+						<a class="alertbtn">알림</a>
+						<div th:if="${alertList != null}">
+							<div class="alertcnt" th:text="${#lists.size(alertList)}"></div>
+						</div>
+					</div>
+					<div class="alertbox">
+						<div th:if="${alertList != null}">
+							<div th:if="${#lists.size(alertList) == 0}">
+								<div>알림없음</div>
+							</div>
+						</div>
+						<div th:if="${alertList != null}">
+							<div class="alreteachbox" th:each="alert : ${alertList}">
+								<a th:href="@{|/question/detail/${alert.answer.question.id}?alertId=${alert.id}|}">
+									<div th:text="|${alert.user.username}님의 댓글!|"></div>
+									<div class="textarea" th:text="|[${alert.answer.content}]|"></div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="bottomline" sec:authorize="isAuthenticated()">
+					<div class="hoverept">
+						<a th:href="@{/user/logout}">로그아웃</a>
+					</div>
+				</li>
+				<li class="bottomline" sec:authorize="isAnonymous()">
+					<div class="hoverept">
+						<a th:href="@{/user/login}">로그인</a>
+					</div>
+				</li>
+				<li class="bottomline" sec:authorize="isAnonymous()">
+					<div class="hoverept">
+						<a th:href="@{/user/signup}">회원가입</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!-- //유저정보 -->
+		
+		<!-- 카테고리 목록 -->
+		<div class="categorie">
+			<div class="categorietitle bottomline">카테고리 목록</div>
+			<div class="categorieinfo bottomline" th:each="categorie : ${categorieList}">
+				<a th:text="${categorie.name}" th:href="@{|/question/list/${categorie.id}|}"></a>
+			</div>
+		</div>
+		<div>
+			<div class="categorietool">
+				<a sec:authorize="hasRole('ADMIN')" th:href="@{/categorie/list}">카테고리 편집</a>
+			</div>
+				<a sec:authorize="hasRole('ADMIN')" th:href="@{/user/list}">유저관리</a>			
+		</div>
+		<!-- //카테고리 목록 -->
+	</div>
+</div>
+<button class="btns sidebtn" id="sidebtn">
+	<div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+</button>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script >
+let button = document.querySelector("#sidebtn")
+let sidebar = document.querySelector(".sidebar")
+let btns = document.querySelector(".btns")
+let alert = document.querySelector(".alertbox")
+let alertbtn = document.querySelector(".alertbtn")
+
+button.addEventListener('click',sideMenu)
+if(alertbtn != null){
+	alertbtn.addEventListener('click', alertMenu)
+}
+
+//사이드바 열고 닫기
+function sideMenu(){
+	if(sidebar.classList.contains("side_active")){
+		sidebar.classList.remove("side_active")
+		btns.style.backgroundColor = ""
+		btns.style.transform = "translateX(0px)"
+	
+	}else{
+		sidebar.classList.add('side_active')
+		btns.style.backgroundColor = "rgb(124, 124, 124)"
+		btns.style.transform = "translateX(90px)"		
+	}
+}
+
+//알람창 열고 닫기
+function alertMenu(){
+	if(alert.classList.contains("alert_active")){
+		alert.classList.remove("alert_active")
+	}else{
+		alert.classList.add('alert_active')
+	}
+}
+
+
+//조회수 올리기
+$(document).ready(function(){
+	$('.subject').click(function(){
+		$.ajax({
+			url : '/question/view',
+			data : $(this).data(),
+			success : function(result){
+				console.log(result)
+			}
+		})
+	})
+})
+</script>

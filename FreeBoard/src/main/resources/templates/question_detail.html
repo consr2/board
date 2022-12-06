@@ -1,0 +1,100 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content">
+	<div class="mainflex">
+		<div>
+			<nav th:replace="sidevar"></nav>
+		</div>
+		<div class="qdetail">
+			<!-- 게시글 제목 -->						
+			<h2 class="title" th:text="${question.subject}"></h2>
+			<div class="otherinfo">
+				<div class="timeinfo">
+					<div th:text="${#temporals.format(question.createDate, 'yyyy-MM-dd HH:mm')}"></div>
+				</div>
+				<div class="q_view">
+					<div>View</div>
+					<div th:text="|(${question.view})|"></div>
+				</div>
+				<div class="vote_count" th:text="|[${question.voter.size()}]|"></div>
+				<div class="vote_btn">
+					<form th:action="@{|/question/detail/${question.id}/voter|}">
+						<input class="btns" type="submit" value="추천"/>
+					</form>
+				</div>
+			</div>
+			<!-- //게시글 제목 -->
+			<!-- 게시글 내용, 첨부파일 -->
+			<div class="q_content">
+				<div th:utext="${question.content}"></div>
+				<div th:if="${question.fileId != null}">
+					<img th:src="|/question/images/${file.id}|" width="150" heigth="150">
+					<strong>첨부파일 : </strong>
+					<a th:text="${file.orginName}" 
+					th:href="@{|/question/download/${question.fileId}|}"></a>
+				</div>
+			</div>
+			<!-- //게시글 내용, 첨부파일 -->
+
+			<!-- 댓글 작성박스 -->
+			<form th:action="@{|/detail/create/${question.id}|}" th:object="${answerForm}" method="post">
+				<div class="answerbox">
+					<div class="answercreatebox" sec:authorize="isAnonymous()">
+						<textarea class="answercreatearea" rows="5" placeholder="로그인이 필요합니다"  disabled th:field="*{content}"></textarea>
+					</div>				
+					<div class="answercreatebox" sec:authorize="hasAnyRole('VISITER','ADMIN','USER')">
+						<textarea class="answercreatearea" rows="5" placeholder="댓글을 입력해 주세요"  th:field="*{content}"></textarea>
+					</div>
+					<div>
+						<input class="btns answerbtn" type="submit" value="입력" >
+					</div>					
+				</div>
+			</form>
+			<!-- // 댓글 장성박스 -->
+
+			<!-- 댓글 목록 -->
+			<div th:each="answer : ${question.answerList}">
+				<div class="q_answerbox">
+					<div class="answerid">
+						<span th:if="${answer.author != null}" th:text="${answer.author.username}"></span>	
+					</div>
+					<div th:text="${answer.content}"></div>
+					<div class="answer_infobox">
+						<div class="answerdate" th:text="${#temporals.format(answer.createDate, 'MM-dd HH:mm')}"></div>
+						<div class="answerdeletebtn">
+							<a href="javascript:void(0);" th:data-uri="@{|/answer/delete/${answer.id}|}" 
+								class="btns delete" sec:authorize="isAuthenticated()" 
+								th:if="${question.author != null and answer.author.username == #authentication.getPrincipal().getUsername()}" th:text="삭제">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // 댓글 목록 -->
+			
+			<!-- 수정 삭제 버튼 -->
+			<div class="questionbtnbox">
+				<div class="btns q_remake_btn" sec:authorize="isAuthenticated()" 
+					th:if="${question.author != null and #authentication.getPrincipal().getUsername() == question.author.username}" >
+					<a th:href="@{|/question/modify/${question.id}|}">수정</a>
+				</div>
+				<div class="btns q_delete_btn" sec:authorize="isAuthenticated()"
+					th:if="${question.author != null and #authentication.getPrincipal().getUsername() == question.author.username}">
+					<a th:href="@{|/question/delete/${question.id}|}">삭제</a>
+				</div>
+			</div>
+			<!-- //수정 삭제 버튼 -->
+		</div>
+	</div>
+</div>
+<!-- 댓글 삭제 알림 -->
+<script type='text/javascript'>
+const delete_elements = document.getElementsByClassName("delete");
+Array.from(delete_elements).forEach(function(element) {
+    element.addEventListener('click', function() {
+        if(confirm("정말로 삭제하시겠습니까?")) {
+            location.href = this.dataset.uri;
+        };
+    });
+});
+</script>
+</html> 
