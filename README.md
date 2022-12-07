@@ -96,5 +96,5 @@ https://wikidocs.net/book/7601
   게시글의 상세 페이지 입니다.
   
   <div>
-	<img src="https://user-images.githubusercontent.com/110438208/206108036-d8a2ac6e-07e0-4ad8-9152-a4c655f503f4.png" width="400" height="250">
+	<img src="https://user-images.githubusercontent.com/110438208/206110439-99d6a4e7-e5a0-495b-a0d8-d57156e12040.png" width="400" height="250">
 </div>
