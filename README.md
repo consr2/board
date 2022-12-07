@@ -37,30 +37,29 @@ https://wikidocs.net/book/7601
 
 3. 프로젝트 설명  
 토이 프로젝트의 일환으로 나만의 자료실을 만들어 보았습니다.  
-<br/>
-<br/>
+
+
 이 프로젝트의 메인 페이지 입니다.
 <div>
   <img src="https://user-images.githubusercontent.com/110438208/206104542-8e63bae4-2048-4060-80ef-5cfa8e7e119b.png" width="400" height="250">
 </div>
-<br/>
-<br/>  
-<br/>
-<br/> 
+
+  
+
 **회원가입** 기능이 있으며 **유저**와 **admin**으로 구분 됩니다.  
 <div>
   <img src="https://user-images.githubusercontent.com/110438208/206104377-186df842-e2f7-47ab-898d-22d45654399c.png" width="150" height="300">
   <img src="https://user-images.githubusercontent.com/110438208/206104423-0bf21c09-817c-42de-bf83-f8b665449e40.png"width="150" height="300">
 </div>
-<br/>
-<br/>  
+
+
 **게시글 작성 페이지**  
 **카테고리 선택,제목, 내용, 파일 첨부**칸이 있습니다. 내용부분은 **summernote**를 가져왔습니다.
 <div>
   <img src="https://user-images.githubusercontent.com/110438208/206107985-c1169a6a-3920-4779-acfd-2272d1ddf091.png" width="400" height="250">
 </div>
-<br/>
-<br/>
+
+
 ```  
 	<meta name="_csrf" th:content="${_csrf.token}"/>  
 	<meta name="_csrf_header" th:content="${_csrf.headerName}"/>  
@@ -92,8 +91,8 @@ https://wikidocs.net/book/7601
 
   시큐리티 사용 시 ajax로 파일을 보내려면 csrf토큰을 해더에 추가해 줘야 합니다. 
 
-  게시글의 상세 페이지 입니다.
-
-  <div>
+  게시글의 상세 페이지 입니다.  
+  
+<div>
 	<img src="https://user-images.githubusercontent.com/110438208/206110439-99d6a4e7-e5a0-495b-a0d8-d57156e12040.png" width="400" height="250">
 </div>
