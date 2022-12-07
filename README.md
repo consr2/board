@@ -36,14 +36,7 @@ https://wikidocs.net/book/7601
 
 
 3. 프로젝트 설명  
-자신의 글, 파일을 저장하는 게시글 + 저장소의 역할을 합니다.
+토이 프로젝트의 일환으로 나만의 자료실을 만들어 보았습니다.  
+**회원가입** 기능이 있으며 **유저**와 **admin**으로 구분 됩니다.
 
-<div>
-4. 라이브러리  
-<jquery>
-https://jquery.com/
-<summernote>
-https://summernote.org/
-<bootstrap>
-https://getbootstrap.com/
-</div>
+
