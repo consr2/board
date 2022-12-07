@@ -104,6 +104,6 @@ https://wikidocs.net/book/7601
 
 
 **4. 외부 라이브러리**  
-<jquery>     : 3.5.1  
-<summernote> : 0.8.18  
-<bootstrap>  : 3.4.1  
+####\<jquery\>     : 3.5.1  
+####\<summernote\> : 0.8.18  
+####\<bootstrap\>  : 3.4.1  
