@@ -62,8 +62,8 @@ https://wikidocs.net/book/7601
 <br/>
 <br/>
 ```  
-<meta name="_csrf" th:content="${_csrf.token}"/>  
-<meta name="_csrf_header" th:content="${_csrf.headerName}"/>  
+	<meta name="_csrf" th:content="${_csrf.token}"/>  
+	<meta name="_csrf_header" th:content="${_csrf.headerName}"/>  
     
     function uploadSummernoteImageFile(file, editor) {
 		var token = $("meta[name='_csrf']").attr("content");
@@ -89,14 +89,11 @@ https://wikidocs.net/book/7601
 	}
 ```  
 
-<br/>
-<br/>
+
   시큐리티 사용 시 ajax로 파일을 보내려면 csrf토큰을 해더에 추가해 줘야 합니다. 
-<br/>
-<br/>
-<br/>
+
   게시글의 상세 페이지 입니다.
-<br/>
+
   <div>
 	<img src="https://user-images.githubusercontent.com/110438208/206110439-99d6a4e7-e5a0-495b-a0d8-d57156e12040.png" width="400" height="250">
 </div>
