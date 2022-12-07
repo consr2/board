@@ -43,15 +43,48 @@ https://wikidocs.net/book/7601
   <img src="https://user-images.githubusercontent.com/110438208/206104542-8e63bae4-2048-4060-80ef-5cfa8e7e119b.png" width="400" height="250">
 </div>
 
-
-
-
-
-
+  
+  
+  
 **회원가입** 기능이 있으며 **유저**와 **admin**으로 구분 됩니다.  
 <div>
   <img src="https://user-images.githubusercontent.com/110438208/206104377-186df842-e2f7-47ab-898d-22d45654399c.png" width="150" height="300">
   <img src="https://user-images.githubusercontent.com/110438208/206104423-0bf21c09-817c-42de-bf83-f8b665449e40.png"width="150" height="300">
 </div>
-
+  
+  
+**게시글 작성 페이지**  
+카테고리 선택,제목, 내용, 파일 첨부칸이 있습니다. 내용부분은 summernote를 가져왔습니다.
+<div>
+  <img src="https://user-images.githubusercontent.com/110438208/206107985-c1169a6a-3920-4779-acfd-2272d1ddf091.png" width="400" height="250">
+</div>
+  
+  
+```
+<meta name="_csrf" th:content="${_csrf.token}"/>  
+<meta name="_csrf_header" th:content="${_csrf.headerName}"/>  
+    
+    function uploadSummernoteImageFile(file, editor) {
+		var token = $("meta[name='_csrf']").attr("content");
+		var header = $("meta[name='_csrf_header']").attr("content");
+		
+		console.log(token)
+		data = new FormData();
+		data.append("file", file);
+		$.ajax({
+			data : data,
+			type : "POST",
+			url : "/question/summernote",
+			contentType : false,
+			processData : false,
+			beforeSend : function(xhr){
+				xhr.setRequestHeader(header, token);
+			},
+			success : function(data) {
+            	//항상 업로드된 파일의 url이 있어야 한다.
+				$(editor).summernote('insertImage', data);
+			}
+		});
+	}
+```
 
