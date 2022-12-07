@@ -37,6 +37,8 @@ https://wikidocs.net/book/7601
 
 3. 프로젝트 설명  
 토이 프로젝트의 일환으로 나만의 자료실을 만들어 보았습니다.  
-**회원가입** 기능이 있으며 **유저**와 **admin**으로 구분 됩니다.
+**회원가입** 기능이 있으며 **유저**와 **admin**으로 구분 됩니다.  
+![image](https://user-images.githubusercontent.com/110438208/206104377-186df842-e2f7-47ab-898d-22d45654399c.png)
+![image](https://user-images.githubusercontent.com/110438208/206104423-0bf21c09-817c-42de-bf83-f8b665449e40.png)
 
 
