@@ -16,3 +16,8 @@
 <div align="center">
   <img src="https://img.shields.io/badge/MySQL-skyblue?style=flat&logo=MySQL&logoColor=white"/>
 </div>
+
+<div>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=consr2&layout=compact"><br><br>
+  <img src="https://github-readme-stats.vercel.app/api?username=consr2&show_icons=true">
+</div>
