@@ -38,9 +38,7 @@ https://wikidocs.net/book/7601
 3. 프로젝트 설명  
 자신의 글, 파일을 저장하는 게시글 + 저장소의 역할을 합니다.
 
-
-4.라이브러리 목록  
-
+4. 라이브러리  
 <jquery>  
 https://jquery.com/  
 <summernote>  
