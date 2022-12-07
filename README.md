@@ -25,4 +25,4 @@
 --------------------------------------------------------------------------------------------
 <h5>프로젝트를 시작하면서</
 
-(https://user-images.githubusercontent.com/110438208/206098059-edcf1494-eb16-4466-8fb1-2f1b51940ec3.png)
+![image](https://user-images.githubusercontent.com/110438208/206098394-af82a4a7-74b0-4c49-a058-9d506367db28.png)
