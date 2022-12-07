@@ -17,7 +17,12 @@
   <img src="https://img.shields.io/badge/MySQL-skyblue?style=flat&logo=MySQL&logoColor=white"/>
 </div>
 
-<div>
+<div align="center">
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=consr2&layout=compact"><br><br>
   <img src="https://github-readme-stats.vercel.app/api?username=consr2&show_icons=true">
 </div>
+
+--------------------------------------------------------------------------------------------
+<h5>프로젝트를 시작하면서</
+
+(https://user-images.githubusercontent.com/110438208/206098059-edcf1494-eb16-4466-8fb1-2f1b51940ec3.png)
