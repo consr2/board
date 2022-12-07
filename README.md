@@ -54,7 +54,7 @@ https://wikidocs.net/book/7601
   
   
 **게시글 작성 페이지**  
-카테고리 선택,제목, 내용, 파일 첨부칸이 있습니다. 내용부분은 summernote를 가져왔습니다.
+**카테고리 선택,제목, 내용, 파일 첨부**칸이 있습니다. 내용부분은 **summernote**를 가져왔습니다.
 <div>
   <img src="https://user-images.githubusercontent.com/110438208/206107985-c1169a6a-3920-4779-acfd-2272d1ddf091.png" width="400" height="250">
 </div>
@@ -87,4 +87,14 @@ https://wikidocs.net/book/7601
 		});
 	}
 ```
-
+  
+  
+  시큐리티 사용 시 ajax로 파일을 보내려면 csrf토큰을 해더에 추가해 줘야 합니다. 
+  
+  
+  
+  게시글의 상세 페이지 입니다.
+  
+  <div>
+	<img src="https://user-images.githubusercontent.com/110438208/206108036-d8a2ac6e-07e0-4ad8-9152-a4c655f503f4.png" width="400" height="250">
+</div>
