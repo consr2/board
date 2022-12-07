@@ -23,22 +23,22 @@
 </div>
 
 --------------------------------------------------------------------------------------------
-1. 프로젝트 버전
-spring-boot : 2.7.5
-java        : 17 
-mysql       : 8.0.29
-lombok      : 1.18.24
+#1. 프로젝트 버전  
+spring-boot : 2.7.5  
+java        : 17   
+mysql       : 8.0.29  
+lombok      : 1.18.24  
 
 
-2. 참고 출처
-<점프 투 스프링부트>
-https://wikidocs.net/book/7601
+#2. 참고 출처  
+<점프 투 스프링부트>  
+https://wikidocs.net/book/7601  
 
 
-4.라이브러리 목록
-<jquery>
-https://jquery.com/
-<summernote>
-https://summernote.org/
-<bootstrap>
-https://getbootstrap.com/
+#4.라이브러리 목록  
+<jquery>  
+https://jquery.com/  
+<summernote>  
+https://summernote.org/  
+<bootstrap>  
+https://getbootstrap.com/  
