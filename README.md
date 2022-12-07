@@ -99,3 +99,11 @@ https://wikidocs.net/book/7601
 <div>
 	<img src="https://user-images.githubusercontent.com/110438208/206110439-99d6a4e7-e5a0-495b-a0d8-d57156e12040.png" width="400" height="250">
 </div>
+
+<br/><br/>
+
+
+**4. 외부 라이브러리**  
+<jquery> 3.5.1  
+<summernote>  0.8.18  
+<bootstrap>  3.4.1  
