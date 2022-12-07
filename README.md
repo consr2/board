@@ -23,6 +23,22 @@
 </div>
 
 --------------------------------------------------------------------------------------------
-<h5>프로젝트를 시작하면서</
+1. 프로젝트 버전
+spring-boot : 2.7.5
+java        : 17 
+mysql       : 8.0.29
+lombok      : 1.18.24
 
-![image](https://user-images.githubusercontent.com/110438208/206098394-af82a4a7-74b0-4c49-a058-9d506367db28.png)
+
+2. 참고 출처
+<점프 투 스프링부트>
+https://wikidocs.net/book/7601
+
+
+4.라이브러리 목록
+<jquery>
+https://jquery.com/
+<summernote>
+https://summernote.org/
+<bootstrap>
+https://getbootstrap.com/
