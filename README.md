@@ -35,7 +35,7 @@ lombok      : 1.18.24
 https://wikidocs.net/book/7601  
 
 
-3. 프로젝트 설명  
+**3. 프로젝트 설명**   
 토이 프로젝트의 일환으로 나만의 자료실을 만들어 보았습니다.  
 
 
@@ -44,7 +44,7 @@ https://wikidocs.net/book/7601
   <img src="https://user-images.githubusercontent.com/110438208/206104542-8e63bae4-2048-4060-80ef-5cfa8e7e119b.png" width="400" height="250">
 </div>
 
-  
+  <br/><br/>
 
 **회원가입** 기능이 있으며 **유저**와 **admin**으로 구분 됩니다.  
 <div>
@@ -52,7 +52,8 @@ https://wikidocs.net/book/7601
   <img src="https://user-images.githubusercontent.com/110438208/206104423-0bf21c09-817c-42de-bf83-f8b665449e40.png"width="150" height="300">
 </div>
 
-
+  <br/><br/>
+  
 **게시글 작성 페이지**  
 **카테고리 선택,제목, 내용, 파일 첨부**칸이 있습니다. 내용부분은 **summernote**를 가져왔습니다.
 <div>
