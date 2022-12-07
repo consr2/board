@@ -53,7 +53,7 @@ https://wikidocs.net/book/7601
   <img src="https://user-images.githubusercontent.com/110438208/206104423-0bf21c09-817c-42de-bf83-f8b665449e40.png"width="150" height="300">
 </div>
 <br/>
-<br/>
+<br/>  
 **게시글 작성 페이지**  
 **카테고리 선택,제목, 내용, 파일 첨부**칸이 있습니다. 내용부분은 **summernote**를 가져왔습니다.
 <div>
@@ -61,7 +61,7 @@ https://wikidocs.net/book/7601
 </div>
 <br/>
 <br/>
-```
+```  
 <meta name="_csrf" th:content="${_csrf.token}"/>  
 <meta name="_csrf_header" th:content="${_csrf.headerName}"/>  
     
@@ -87,7 +87,8 @@ https://wikidocs.net/book/7601
 			}
 		});
 	}
-```
+```  
+
 <br/>
 <br/>
   시큐리티 사용 시 ajax로 파일을 보내려면 csrf토큰을 해더에 추가해 줘야 합니다. 
