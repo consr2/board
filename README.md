@@ -37,9 +37,21 @@ https://wikidocs.net/book/7601
 
 3. 프로젝트 설명  
 토이 프로젝트의 일환으로 나만의 자료실을 만들어 보았습니다.  
+
+이 프로젝트의 메인 페이지 입니다.
+<div>
+  <img src="https://user-images.githubusercontent.com/110438208/206104542-8e63bae4-2048-4060-80ef-5cfa8e7e119b.png" width="400" height="250">
+</div>
+
+
+
+
+
+
 **회원가입** 기능이 있으며 **유저**와 **admin**으로 구분 됩니다.  
 <div>
-  <img src="https://user-images.githubusercontent.com/110438208/206104377-186df842-e2f7-47ab-898d-22d45654399c.png" width="100" height="200">
-  <img src="https://user-images.githubusercontent.com/110438208/206104423-0bf21c09-817c-42de-bf83-f8b665449e40.png"width="100" height="200">
+  <img src="https://user-images.githubusercontent.com/110438208/206104377-186df842-e2f7-47ab-898d-22d45654399c.png" width="150" height="300">
+  <img src="https://user-images.githubusercontent.com/110438208/206104423-0bf21c09-817c-42de-bf83-f8b665449e40.png"width="150" height="300">
 </div>
+
 
