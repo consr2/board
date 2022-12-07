@@ -1,2 +1,1 @@
-# board
-게시판 저장소
+<img src="https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=FreeBoard&fontSize=90" />
