@@ -34,18 +34,28 @@ https://wikidocs.net/book/7601
 **3. 프로젝트 설명**   
 토이 프로젝트의 일환으로 나만의 자료실을 만들어 보았습니다.  
 
+<h5>ERD 입니다.</h5>
+<div>
+  <img src="https://user-images.githubusercontent.com/110438208/226891435-6c40b9b3-b5f2-4a24-8798-6d2fb758f2a7.png" width="800" height="600">
+</div>
+<br/><br/>
 
 이 프로젝트의 메인 페이지 입니다.
 <div>
-  <img src="https://user-images.githubusercontent.com/110438208/206104542-8e63bae4-2048-4060-80ef-5cfa8e7e119b.png" width="400" height="250">
+  <img src="https://user-images.githubusercontent.com/110438208/206104542-8e63bae4-2048-4060-80ef-5cfa8e7e119b.png" width="800" height="600">
 </div>
 
   <br/><br/>
-
+  <h5>카테로기 세부 내역의 페이지 처리 밑 검색기능이 있습니다.</h5>
+<div>
+  <img src="https://user-images.githubusercontent.com/110438208/226890632-aaae5ab0-e98b-4c12-915b-95c50500bba7.png" width="800" height="600">
+</div>
+  
+<br/><br/>
 **회원가입** 기능이 있으며 **유저**와 **admin**으로 구분 됩니다.  
 <div>
-  <img src="https://user-images.githubusercontent.com/110438208/206104377-186df842-e2f7-47ab-898d-22d45654399c.png" width="150" height="300">
-  <img src="https://user-images.githubusercontent.com/110438208/206104423-0bf21c09-817c-42de-bf83-f8b665449e40.png"width="150" height="300">
+  <img src="https://user-images.githubusercontent.com/110438208/206104377-186df842-e2f7-47ab-898d-22d45654399c.png" width="300" height="600">
+  <img src="https://user-images.githubusercontent.com/110438208/206104423-0bf21c09-817c-42de-bf83-f8b665449e40.png"width="300" height="600">
 </div>
 
   <br/><br/>
